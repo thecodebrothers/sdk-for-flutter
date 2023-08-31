@@ -45,11 +45,11 @@ class Functions extends Service {
             'headers': headers,
         };
 
-        final Map<String, String> headers = {
+        final Map<String, String> apiHeaders = {
             'content-type': 'application/json',
         };
 
-        final res = await client.call(HttpMethod.post, path: apiPath, params: params, headers: headers);
+        final res = await client.call(HttpMethod.post, path: apiPath, params: params, headers: apiHeaders);
 
         return models.Execution.fromMap(res.data);
 
